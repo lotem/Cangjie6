@@ -360,7 +360,7 @@ key_binder:
   import_preset: default
 
 punctuator:
-  import_preset: symbols_leo
+  import_preset: symbols
 
 recognizer:
   import_preset: default
