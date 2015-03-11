@@ -80,20 +80,24 @@ cjk_filter:
 speller:
   alphabet: zyxwvutsrqponmlkjihgfedcba
   delimiter: " "
+  algebra:
+    - 'xform/=.*$//'
 
 translator:
   dictionary: &dict
-    cangjie6
+    cangjie6.5x
   enable_completion: true
   enable_sentence: true
   sentence_over_completion: true
+  spelling_hints: 1
   preedit_format:
 #    - xform/^([a-z ]*)$/$1｜\U$1\E/
 #    - xform/(?<=[a-z])\s(?=[a-z])//
 #    - xlit|ABCDEFGHIJKLMNOPQRSTUVWXYZ|日月金木水火土竹戈十大中一弓人心手口尸廿山女田止卜片|
     - xlit|abcdefghijklmnopqrstuvwxyz|日月金木水火土竹戈十大中一弓人心手口尸廿山女田止卜片|
   comment_format:
-    - xlit|abcdefghijklmnopqrstuvwxyz~|日月金木水火土竹戈十大中一弓人心手口尸廿山女田止卜片・|
+    - xform/[a-z]*=/=/
+    - xlit|abcdefghijklmnopqrstuvwxyz~=|日月金木水火土竹戈十大中一弓人心手口尸廿山女田止卜片・→|
   initial_quality: 0.75
 
 custom_phrase:
@@ -156,23 +160,24 @@ jyutping_lookup:
 
 pinyin_reverse_lookup:
   tags: [ pinyin_lookup ]
-  overwrite_comment: true
+  overwrite_comment: false
   dictionary: *dict
   comment_format: &comment
     - xform/$/〕/
     - xform/^/〔/
-    - xlit|abcdefghijklmnopqrstuvwxyz |日月金木水火土竹戈十大中一弓人心手口尸廿山女田止卜片、|
+    - xform/=[a-z]*/-/
+    - xlit|abcdefghijklmnopqrstuvwxyz -|日月金木水火土竹戈十大中一弓人心手口尸廿山女田止卜片、※|
 
 jyutping_reverse_lookup:
   tags: [ jyutping_lookup ]
-  overwrite_comment: true
+  overwrite_comment: false
   dictionary: *dict
   comment_format: *comment
 
 middle_chinese:
   tags: [ pinyin, jyutping, abc ]
   dictionary: zyenpheng
-  overwrite_comment: true
+  overwrite_comment: false
   comment_format:
     - xform/ /\x03 \x01/
     - xform/$/\x03/
