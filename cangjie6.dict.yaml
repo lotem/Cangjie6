@@ -11,6 +11,7 @@
 # 增加組詞分隔符、正體字字頻 雪齋 2013-05-30
 # 採用相對字頻 雪齋 2013-12-09
 # 增加擴展E區字 雪齋 2014-11-03
+# 恢復字母「竹」和「的」的取碼 雪齋、佛振 2014-11-23
 
 # 本字表收中日韓越統一表意文字及其擴展A、B、C、D、E區另加相容表意文字區之12箇獨立字、相容表意文字擴充區28箇獨立字。
 # 取碼依宋體及明體。另：擴展B區有三個重複收錄字，本表錄之，但加「#」註。
@@ -18,7 +19,7 @@
 # License: GPL
 ---
 name: cangjie6
-version: "0.30"
+version: "0.31"
 sort: by_weight
 use_preset_vocabulary: false
 columns:
@@ -27,6 +28,8 @@ columns:
   - weight
   - stem
 encoder:
+  exclude_patterns:
+    - '^z.*$'
   rules:
     - length_equal: 2
       formula: AaAzBaBbBz
@@ -3049,13 +3052,14 @@ encoder:
 𦛣	bgyo
 𦟷	bgyr
 𦛘	bgz
-𦝂	bh
 胉	bha	1
 𬂗	bhaa
 𦛤	bhac
 腺	bhae
 𪱦	bhag
+𦝂	bhai
 𦞵	bhaj
+𦝂	bham
 𬂎	bhao
 冟	bhap
 𦛮	bhau	1
@@ -6479,7 +6483,6 @@ encoder:
 鑟	cgwc
 𫟱	cgwi
 䤲	cgz
-𫒫	ch
 鉑	cha	1
 㒶	cha
 𨰝	chaa
@@ -6487,6 +6490,8 @@ encoder:
 𨰓	chab
 䤼	chae
 鍠	chag
+𫒫	chai
+𫒫	cham
 𨰭	chbf
 鐭	chbk
 𬬃	chbl
@@ -9428,6 +9433,7 @@ encoder:
 𣔥	dhox
 杔	dhp	1
 𪬟	dhp
+𣖯	dhp
 橁	dhpa
 𣞫	dhpd
 楖	dhpl
@@ -10545,8 +10551,7 @@ encoder:
 𣔢	donn
 𫯓	donn
 𣒀	dono
-棯	donp	1
-𣖯	donp
+棯	donp
 梒	donr
 𣘞	donw
 𩽑	donwf
@@ -20520,7 +20525,8 @@ encoder:
 赪	gzybo
 𧹹	gzyia
 𧹴	gzyvw
-的	h	1
+的	h	2
+竹	h	1
 丿	h
 白	ha
 𬕑	haa
@@ -20818,6 +20824,7 @@ encoder:
 馝	haph	1
 𥮬	haph
 鵖	haphz
+的	hapi	1
 𥮀	hapi
 𬐄	hapim
 𤾰	hapko
@@ -22681,12 +22688,13 @@ encoder:
 𧚒	hgyhv
 幷	hh	1
 𠂆	hh
-𫂇	hh
 𥬝	hha
 篁	hhag
 𨉭	hhahu
 𥶱	hhai
+𫂇	hhai
 𨈱	hham
+𫂇	hham
 䠾	hhano
 𬧨	hhapp
 𨉪	hhapv
@@ -22774,8 +22782,9 @@ encoder:
 軇	hhgni
 筶	hhgr	1
 筅	hhgu
-彡	hhh	1
-䈂	hhh
+彡	hhh	2
+䈂	hhh	1
+𥴒	hhh
 𨉍	hhhac
 𨉤	hhhag
 𨉄	hhhbq
@@ -30911,6 +30920,7 @@ encoder:
 𧞯	ipfyv
 塵	ipg
 𪊧	ipgg
+𢎉	iph
 𪊰	iphbu
 麇	iphd
 麘	iphda	1
@@ -31033,8 +31043,6 @@ encoder:
 𨾍	ipog
 𪋇	ipog
 𪊢	ipok
-𢎉	ipoll
-𢎉	ipoln
 𪊸	ipomd
 𢎂	ipoo
 𬸿	ipood
@@ -35372,19 +35380,20 @@ encoder:
 𤺬	kgth
 𬏭	kgz
 犭	kh	2
-𤷭	kh
 𤝍	kha
 猖	khaa
 㾮	khag	1
 𡙙	khag
 猩	khahm
 猸	khahu
+𤷭	khai
 𤡚	khaiu
 㿁	khaj	1
 𤞋	khaj
 癤	khal	1
 狚	kham	1
 𤞾	kham
+𤷭	kham
 𬌺	khamh
 猂	khamj
 𤟥	khamo
@@ -48887,9 +48896,10 @@ encoder:
 孙	ndf
 𡦓	ndfog
 㝆	ndgrr
-𪦼	ndh
 𪦺	ndha
+𪦼	ndhai
 𡥴	ndham
+𪦼	ndham
 𡥠	ndhbt
 𦩧	ndhby
 𣟮	ndhce
@@ -55036,7 +55046,6 @@ encoder:
 𥷹	onoln
 𠏪	onom	1
 𠇹	onom
-𥴒	ononn	1
 𥫮	ononn
 𠋉	onoo
 僜	onot
@@ -59985,13 +59994,14 @@ encoder:
 捇	qgz
 𢲳	qgzk
 𢷓	qgzz
-𢯊	qh
 拍	qha	1
 𢫗	qha
 揘	qhag
+𢯊	qhai
 𫽿	qhaj
 擳	qhal
 𪮆	qham	1
+𢯊	qham
 𢴈	qham
 𢫷	qhau
 𢪼	qhbe
@@ -62986,17 +62996,19 @@ encoder:
 𠻏	rgzi
 𠻲	rgzk
 嚇	rgzz
-啲	rh
+𪠿	rh
 㕷	rha
 𡅉	rhaa
 𡅌	rhab
 𠼎	rhad
 𪡠	rhae
 喤	rhag
+啲	rhai
 嗥	rhaj	2
 噑	rhaj	1
 唕	rhaj
 㘉	rhal
+啲	rham	1
 𠵋	rham
 唣	rhap
 𠴡	rhau
@@ -63854,6 +63866,7 @@ encoder:
 号	rms	1
 𫩐	rms
 𪢙	rmsb
+𥯵	rmsh
 鴞	rmshz
 蠡	rmsi	1
 䗍	rmsi
@@ -64147,9 +64160,7 @@ encoder:
 𠺧	rold
 𤬤	rolii
 𠳘	rolk
-吤	roll	2
-𪠿	roll	1
-𪠿	roln	2
+吤	roll	1
 𠲽	roln	1
 𡂈	rolo
 𠰋	rom
@@ -67635,7 +67646,8 @@ encoder:
 𩭑	shgz
 屛	shh	2
 刃	shh	1
-𩭲	shh
+𩭲	shhai
+𩭲	shham
 𩯠	shhar
 㣇	shhb
 𫵨	shhbn
@@ -67992,6 +68004,7 @@ encoder:
 䯹	shsbe
 䰁	shse
 𠚪	shsh
+𥯵	shsh
 𦏲	shsh
 脋	shshb
 刕	shshh	1
@@ -68005,7 +68018,6 @@ encoder:
 𩬹	shsmg
 䰐	shsmt
 𩭨	shsmv
-𥯵	shsn
 𩭅	shss
 𩭊	shssr
 𩫻	shsu
@@ -68381,7 +68393,8 @@ encoder:
 聃	sjgb
 聐	sjgr
 𦖅	sjgug
-𦖡	sjh
+𦖡	sjhai
+𦖡	sjham
 𦖶	sjhbi
 䎺	sjhbn
 䎿	sjhdf
@@ -71338,7 +71351,7 @@ encoder:
 𦎍	tgyr
 蘾	tgyv
 䓇	tgz
-菂	th	1
+𫇸	th	1
 𠀗	th
 苩	tha
 藠	thaa	1
@@ -71350,9 +71363,11 @@ encoder:
 蘤	thaf
 葟	thag
 𪆨	thahz
+菂	thai	1
 莵	thai
 䔌	thaj	1
 𦯑	thaj
+菂	tham
 𫈇	thap
 𫉢	thar
 葩	thau	3
@@ -73615,8 +73630,6 @@ encoder:
 芥	toll	3
 养	toll	2
 𦵋	toll
-𫇸	toll
-𫇸	toln
 𦿍	tolo
 𦲈	tolt
 䕘	tolz
@@ -88633,3 +88646,4 @@ encoder:
 娈	yzv
 𫿳	yzyj
 𠅯	yzyz
+片	z
